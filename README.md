@@ -1,122 +1,215 @@
-<div align="center">
+# 🔐 Cybersecurity Lab Setup Using Kali Linux and VirtualBox
 
-# 🔐 Cybersecurity Lab Area Setup
-
-**Setting up a home  virtual lab for cybersecurity and ethical hacking practice**
-</div>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Skill-Cybersecurity-404040?style=flat-square&labelColor=C00000" />
-  <img src="https://img.shields.io/badge/Ver-Virtualbox%20v7.2-0070C0?style=flat-square&labelColor=000000" />
-  <img src="https://img.shields.io/badge/Kali%20Linux-v2026.3-E87500?style=flat-square&labelColor=000000&logo=kalilinux&logoColor=white" />
-  <img src="https://img.shields.io/badge/Skill-Linux-404040?style=flat-square&labelColor=C00000" />
-  <img src="https://img.shields.io/badge/Network-10.0.0.0%2F24-238F89?style=flat-square&labelColor=000000" />
-  <img src="https://img.shields.io/badge/Penetration%20Testing-C00000?style=flat-square&labelColor=000000&logo=kalilinux&logoColor=white" />
-  <img src="https://img.shields.io/badge/Skill-Virtualization-404040?style=flat-square&labelColor=C00000" />
-  <img src="https://img.shields.io/badge/GitHub-404040?style=flat-square&labelColor=0070C0&logo=github&logoColor=white" />
-  <img src="https://img.shields.io/badge/Kali%20Linux-404040?style=flat-square&labelColor=C00000&logo=kalilinux&logoColor=white" />
-  <img src="https://img.shields.io/badge/NetworkWalks-404040?style=flat-square&labelColor=C00000" />
-  <img src="https://img.shields.io/badge/Ethical%20Hacking-E87500?style=flat-square&labelColor=000000&logo=kalilinux&logoColor=white" />
-  <img src="https://img.shields.io/badge/Waqas%20Karim%20CCIE-C00000?style=flat-square" />
-</p>
-
----
+![OS](https://img.shields.io/badge/Host%20OS-Windows%2011%20Pro-blue)
+![Virtualization](https://img.shields.io/badge/Hypervisor-VirtualBox-orange)
+![Linux](https://img.shields.io/badge/Guest%20OS-Kali%20Linux-557C94)
+![Networking](https://img.shields.io/badge/Network-NAT%20Network-green)
+![Focus](https://img.shields.io/badge/Focus-Cybersecurity-red)
 
 ## 📌 Project Overview
 
-It mainly focuses on building a **virtual cybersecurity and penetration-testing laboratory** with tools such as VirtualBox and Kali Linux.
+This project documents the deployment and configuration of a cybersecurity laboratory using Kali Linux running as a virtual machine inside Oracle VirtualBox on a Windows 11 Pro host.
 
-The purpose of the lab is to create a controlled environment where cybersecurity tools, network scanning, reconnaissance, vulnerability assessment, and other security-testing activities can be performed safely and repeatedly.
+The laboratory was established using a prebuilt Kali Linux VirtualBox image, providing a practical environment for learning Linux administration, network configuration, cybersecurity tools, and authorized security testing.
 
-The lab is configured on a private virtual network so that additional machines can be added later and used as targets for authorized security testing.
+The virtual machine uses NAT Network mode to support outbound network connectivity and communication between virtual machines connected to the same NAT Network.
 
----
+This project represents a foundational step toward developing practical skills in Security Operations Center (SOC) analysis, vulnerability assessment, penetration testing, and ethical hacking.
 
-
-## 🎯 Objectives
-
-The main objectives of this project are to:
-
-- Install and configure VirtualBox.
-- Install/import Kali Linux as a virtual machine.
-- Create a private **NAT Network** for the cybersecurity lab.
-- Configure network connectivity for Kali Linux.
-- Assign a consistent IP address to the Kali VM.
-- Verify network connectivity and DNS resolution.
-- Take a clean VM snapshot for recovery.
-- Document the complete setup process.
-- Prepare the environment for future cybersecurity projects.
+The lab will serve as a foundation for future hands-on cybersecurity exercises and technical projects.
 
 ---
 
-## 🛡️ Purpose of the Lab
+## 🎯 Project Objectives
 
-The purpose of this lab is to provide an isolated and controlled space for cybersecurity learning and authorized security testing.
+The primary objectives of this project are to:
 
-It can be used for activities such as:
+- Set up a cybersecurity lab using Oracle VirtualBox.
+- Deploy Kali Linux using a prebuilt VirtualBox image.
+- Configure virtual machine resources and settings.
+- Configure a NAT Network virtual network adapter.
+- Verify the Kali Linux operating system and network configuration.
+- Practise Linux command-line operations and network troubleshooting.
+- Establish a controlled environment for authorized security testing.
+- Prepare the environment for future penetration-testing and SOC analysis exercises.
+- Document the setup process and technical findings.
 
-- Network reconnaissance
-- Port scanning
-- Vulnerability assessment
-- Packet analysis
-- Web security testing
-- Exploitation practice
-- Security-tool experimentation
+---
 
-⚠️ **Important:** This laboratory must only be used for systems that you own or have explicit permission to test. Do not use the lab or its tools to attack unauthorized systems.
+## 🖥️ Lab Environment
+
+The laboratory consists of a Windows host computer running Oracle VirtualBox, with Kali Linux operating inside a virtual machine.
+
+### Hardware and Software Configuration
+
+| Component | Configuration |
+|---|---|
+| Physical Computer | Dell Latitude E7470 |
+| Host Operating System | Windows 11 Pro |
+| Virtualization Platform | Oracle VirtualBox |
+| Guest Operating System | Kali Linux |
+| Installation Method | Prebuilt VirtualBox Image |
+| Network Mode | NAT Network |
+| Virtual Machine RAM | 2gb |
+| Virtual CPU Allocation | 2 |
+| Virtual Disk Capacity | 20GB |
+| Kali Linux Version | 2026.3 |
+| Additional Virtual Machines | Kioptrix, Metasploit |
 
 ---
 
 ## 🏗️ Lab Architecture
 
-![](1-screenshot-title-image.png)
+The lab follows a virtualized architecture in which Kali Linux runs as a guest operating system on a Windows 11 Pro host.
 
+### Architecture Diagram
 
-Additional target machines can be added to the same virtual network in future projects.
+    +---------------------------------------------+
+    |            Physical Computer                |
+    |                                             |
+    |              Dell Latitude E7470            |
+    |                                             |
+    |         +-------------------------+         |
+    |         |      Windows 11 Pro     |         |
+    |         |       Host OS           |         |
+    |         |                         |         |
+    |         |  +-------------------+  |         |
+    |         |  | Oracle VirtualBox |  |         |
+    |         |  |                   |  |         |
+    |         |  |   +-----------+   |  |         |
+    |         |  |   | Kali Linux|   |  |         |
+    |         |  |   |           |   |  |         |
+    |         |  |   | Security  |   |  |         |
+    |         |  |   | Tools     |   |  |         |
+    |         |  |   +-----------+   |  |         |
+    |         |  +-------------------+  |         |
+    |         +-------------------------+         |
+    |                                             |
+    +---------------------------------------------+
+                         |
+                         |
+                   NAT Network
+                         |
+             +-----------+-----------+
+             |                       |
+       Internet Access       Other Connected VMs
+       (Outbound Traffic)    (When Configured)
+
+### Network Architecture
+
+The Kali Linux virtual machine is configured to use a NAT Network.
+
+This configuration allows virtual machines attached to the same NAT Network to communicate with one another and supports outbound connectivity through the host's network connection.
+
+Additional virtual machines can be connected to the same NAT Network for controlled cybersecurity exercises.
+
+The actual subnet, gateway, and IP addresses depend on the NAT Network configuration.
 
 ---
 
-## ⚙️ Lab Configuration
+## 🛠️ Tools and Technologies
 
-| 🧩 Component       | ⚙️ Configuration   |
-| ------------------ | ------------------  |
-| 🖥️ Host OS         | Windows 11 pro         |
-| 🧠 Host RAM        | 8 GB               |
-| ⚡ Processor       | Intel Core i5      |
-| 🧰 Hypervisor      | VirtualBox 7.2  |
-| 🐉 Security OS     | Kali Linux 2026.3  |
-| 🧠 Kali RAM        | 2048 MB            |
-| 🌐 Virtual Network | NAT Network        |
-| 📡 Network Address | 10.0.0.0/24        |
-| 🐧 Kali IP Address | 10.0.0.2/24        |
-| 🚪 Default Gateway | 10.0.0.1           |
-| 🌍 DNS Server      | 8.8.8.8            |
-| 🔮 Future VM Range | 10.0.0.3–10.0.0.99 |
+The following technologies are used in this project:
 
----
+| Tool | Purpose |
+|---|---|
+| Windows 11 Pro | Host operating system |
+| Oracle VirtualBox | Virtualization and VM management |
+| Kali Linux | Cybersecurity testing and analysis environment |
+| NAT Network | Virtual networking and connectivity |
+| Linux Terminal | System administration and diagnostics |
+| Nmap | Network discovery and service enumeration |
+| Wireshark | Network traffic analysis |
+| Burp Suite | Web application security testing |
 
-# 🪜 Lab Setup Procedure
-
-## Step 1. Install 7-Zip
-
-7-Zip was installed to extract the Kali Linux virtual-machine package, which may be distributed as a `.7z` archive.
-
-**Tool:** 7-Zip
+Nmap, Wireshark, and Burp Suite are included as tools relevant to the intended learning objectives. Their inclusion does not imply that every tool has already been used in this project.
 
 ---
 
-## Step 2. Install VirtualBox
+## ⚙️ Implementation and Setup Process
 
-VirtualBox was installed as the hypervisor.
+### Step 1: Prepare the Host System
+
+The host system is a Dell Latitude E7470 running Windows 11 Pro.
+
+Before deploying the virtual machine, available memory, processor resources, and disk capacity should be checked to ensure the system can support the virtualized environment.
+
+### Step 2: Install Oracle VirtualBox
+
+Oracle VirtualBox provides the virtualization platform required to run Kali Linux on the Windows host.
+
+Official download:
+
+https://www.virtualbox.org/wiki/Downloads
+
+### Step 3: Obtain the Prebuilt Kali Linux VirtualBox Image
+
+A prebuilt Kali Linux VirtualBox image was used instead of installing the operating system manually from an ISO file.
+
+Prebuilt images simplify deployment because the virtual machine is already configured for use with VirtualBox.
+
+Official Kali Linux downloads:
+
+https://www.kali.org/get-kali/
+
+The image should be obtained from the official Kali Linux website, and its integrity should be verified where applicable.
+
+### Step 4: Import the Virtual Machine
+
+The downloaded image was extracted and imported into Oracle VirtualBox.
+
+The virtual machine was then made available through the VirtualBox Manager.
+
+Official installation documentation:
+
+https://www.kali.org/docs/virtualization/import-premade-virtualbox/
+
+### Step 5: Configure Virtual Machine Resources
+
+The virtual machine configuration includes resources such as:
+
+- Random Access Memory (RAM).
+- Virtual processors.
+- Virtual hard disk.
+- Network adapter.
+
+Resource allocation should be adjusted according to the host computer's capabilities.
+
+The actual values should be recorded in the lab configuration table.
+
+### Step 6: Configure the NAT Network
+
+The Kali Linux network adapter was configured to use NAT Network mode.
+
+The configuration can be reviewed in VirtualBox Manager under the virtual machine's network settings.
+
+The NAT Network configuration should also be checked in VirtualBox's Network Manager.
+
+Important considerations:
+
+- Confirm that the NAT Network is enabled.
+- Confirm that the Kali virtual machine is attached to the intended NAT Network.
+- Check whether DHCP is enabled if automatic IP addressing is required.
+- Verify the assigned IP address and default route from Kali Linux.
+- Ensure any additional lab virtual machines use the intended network.
+
+### Step 7: Start Kali Linux
+
+After importing and configuring the virtual machine, Kali Linux was started from VirtualBox Manager.
+
+The guest operating system can then be used to perform system checks and network diagnostics.
 
 ---
 
-## Step 3. Create the NAT Network
+## 🔎 System and Network Verification
 
-A dedicated NAT Network was created in VirtualBox.
+The following commands can be used to verify the Kali Linux environment.
 
-Configuration:
-Network Name: NatNetwork
-IPv4 Prefix:  10.0.0.0/24
-DHCP:         Enabled
-IPv6:         Disabled
+### 1. Verify the Operating System
+
+```bash
+cat /etc/os-release
+
+Purpose: Displays operating system information and the installed Kali Linux release.
+
+### 2. Check Network Interface
