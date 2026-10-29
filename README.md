@@ -338,10 +338,10 @@ This laboratory is intended strictly for education purposes only.
 
 # 👤 Author
 
-**Waqas Karim**\
-Cybersecurity Professional B082
+**Adebayo Olaoluwa**\
+Cybersecurity Intern B084
 
-LinkedIn: [https://www.linkedin.com/in/waqaskarim/](https://www.linkedin.com/in/waqaskarim/)
+LinkedIn: https://www.linkedin.com/in/adebayo-olaoluwa-4a08b6404?utm_source=share_via&utm_content=profile&utm_medium=member_ios
 
 ---
 
