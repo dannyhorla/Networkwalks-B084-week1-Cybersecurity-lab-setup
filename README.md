@@ -54,13 +54,16 @@ The laboratory consists of a Windows host computer running Oracle VirtualBox, wi
 | Virtual CPU Allocation | 2 |
 | Virtual Disk Capacity | 20GB |
 | Kali Linux Version | 2026.3 |
-| Additional Virtual Machines | Kioptrix, Metasploit |
+| Additional Virtual Machines | Kioptrix, Metasploit, Devguru |
 
 ---
 
 ## 🏗️ Lab Architecture
 
-The lab follows a virtualized architecture in which Kali Linux runs as a guest operating system on a Windows 11 Pro host.
+The lab follows a virtualized architecture in which mainly Kali Linux and some other os run as guest operating system on a Windows 11 Pro host.
+
+![](https://github.com/dannyhorla/Networkwalks-B084-week1-Cybersecurity-lab-setup/blob/main/Screenshot%20(11).png)
+
 
 ### Architecture Diagram
 
@@ -104,6 +107,8 @@ This configuration allows virtual machines attached to the same NAT Network to c
 Additional virtual machines can be connected to the same NAT Network for controlled cybersecurity exercises.
 
 The actual subnet, gateway, and IP addresses depend on the NAT Network configuration.
+
+![](
 
 ---
 
