@@ -1,4 +1,4 @@
-# 🔐 Cybersecurity Lab Setup Using Kali Linux and VirtualBox
+# 🔐 Setting up a cybersecurity lab environment 
 
 ![OS](https://img.shields.io/badge/Host%20OS-Windows%2011%20Pro-blue)
 ![Virtualization](https://img.shields.io/badge/Hypervisor-VirtualBox-orange)
@@ -198,6 +198,10 @@ Important considerations:
 - Verify the assigned IP address and default route from Kali Linux.
 - Ensure any additional lab virtual machines use the intended network.
 
+<img width="1366" height="768" alt="Screenshot (9)" src="https://github.com/user-attachments/assets/64543dc7-42b0-4bff-bd5e-592bb5d959dc" />
+
+
+
 ### Step 7: Start Kali Linux
 
 After importing and configuring the virtual machine, Kali Linux was started from VirtualBox Manager.
@@ -208,6 +212,9 @@ The guest operating system can then be used to perform system checks and network
 
 
 ## Step 8. Create a Clean VM Snapshot
+
+<img width="1366" height="768" alt="Screenshot (11)" src="https://github.com/user-attachments/assets/ac5e6e0d-7e6b-4f60-898c-6291a76b3d69" />
+
 
 After completing the initial configuration, a VirtualBox snapshot was created.
 
@@ -230,8 +237,8 @@ If a future exercise changes or damages the VM configuration, the machine can be
 | ----------------------------- | ------------------------------- | ------------------------------- |
 | 🌐 Check IP address           | `ip a`                          | Correct Kali IP displayed       |
 | 📡 Test gateway               | `ping 10.0.0.1`                 | Successful replies              |
-| 🌍 Test Internet connectivity | `ping 8.8.8.8`                  | Successful replies              |
-| 🔎 Test DNS resolution        | `nslookup networkwalks.com`     | Domain resolves                 |
+| 🌍 Test Internet connectivity | `ping -c 4 8.8.8.8`                  | Successful replies              |
+| 🔎 Test DNS resolution        | `nslookup google.com`     | Domain resolves                 |
 | 🧰 Verify Nmap                | `nmap --version`                | Nmap version displayed          |
 | 🔄 Verify snapshot            | Restore snapshot and run `ip a` | Baseline configuration restored |
 
@@ -270,20 +277,17 @@ The network connection was then restarted/rebooted and connectivity was tested a
 
 ---
 
-## Problem 2. VirtualBox VT-x / Virtualization Error
+## Problem 2. Uninstallation and reinstallation of Kali Linux
 
-The VM initially failed to start because hardware virtualization was disabled in the system firmware/BIOS.
+The old kali was giving issues such as full storage, failure to upgrade and update, and unable to perform some tasks on the command line etc.
 
 The issue was resolved by:
 
-1. Restarting the computer.
-2. Entering BIOS/UEFI settings.
-3. Enabling Intel VT-x / hardware virtualization.
-4. Saving the configuration.
-5. Restarting the computer.
-6. Starting the Kali VM again.
-
-After enabling virtualization, the VM started successfully.
+1. check the useful fies and documents and extracted them.
+2. Remove the old Kali Linux.
+3. Start afresh by going to the project to get the download site for Kali.
+4. Downloaded Kali Linux version 2026.3.
+5. configure and fixed the network connection.
 
 
 ---
@@ -347,4 +351,4 @@ LinkedIn: https://www.linkedin.com/in/adebayo-olaoluwa-4a08b6404?utm_source=shar
 
 ## 📌 Project Information
 
-**Program Name:** Cybersecurity at Networkwalks | **Week:** 01 | **Project:** Cybersecurity & Pentesting Lab Setup | **Repository:** GitHub
+**Program Name:** Cybersecurity internship at Networkwalks | **Week:** 01 | **Project:** Cybersecurity & Pentesting Lab Setup | **Repository:** GitHub
